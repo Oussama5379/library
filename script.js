@@ -32,4 +32,7 @@ function displayBook(book) {
 	result.appendChild(nbPages);
 	result.appendChild(author);
 	container.appendChild(result);
+	removeButton.addEventListener("click", (e) => {
+		e.target.parentNode.remove();
+	});
 }
