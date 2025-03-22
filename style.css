@@ -1,0 +1,18 @@
+* {
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+body,
+html {
+	height: 100%;
+}
+.container {
+	height: 100%;
+	display: grid;
+	grid-template-columns: 1.5fr 4fr;
+}
+.sidebar {
+	background-color: blue;
+}
+.main-content {
+	background-color: red;
+}
