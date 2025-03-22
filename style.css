@@ -49,3 +49,9 @@ button {
 	background: linear-gradient(to right, #a944a9, plum);
 	margin-left: 5px;
 }
+.submit-button {
+	color: white;
+	border-radius: 10px;
+	font-size: 22px;
+	margin-top: 20px;
+}

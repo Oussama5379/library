@@ -1,15 +1,24 @@
 let myLibrary = [];
+let submitButton = document.querySelector(".submit-button");
+submitButton.addEventListener("click", (e) => {
+	let title = document.querySelector("#title").value;
+	let author = document.querySelector("#author").value;
+	let nbPages = document.querySelector("#nbPages").value;
+	let IsRead = document.querySelector("#read").checked;
+	addBookToLibrary(title, author, nbPages, IsRead);
+	e.preventDefault();
+});
 
-function Book(title, author, nbPages, Isread) {
+function Book(title, author, nbPages, IsRead) {
 	this.id = crypto.randomUUID();
 	this.title = title;
 	this.author = author;
 	this.nbPages = nbPages;
-	this.Isread = Isread;
+	this.IsRead = IsRead;
 }
 
-function addBookToLibrary(title, author, nbPages, Isread) {
-	let newBook = new Book(title, author, nbPages, Isread);
+function addBookToLibrary(title, author, nbPages, IsRead) {
+	let newBook = new Book(title, author, nbPages, IsRead);
 	myLibrary.push(newBook);
 	displayBook(newBook);
 }
@@ -23,7 +32,7 @@ function displayBook(book) {
 	let result = document.createElement("div");
 	result.classList.add("book");
 	title.textContent = book.title;
-	if (book.Isread) {
+	if (book.IsRead) {
 		readButton.textContent = "Unread";
 	} else {
 		readButton.textContent = "Read";
@@ -55,7 +64,7 @@ function displayBook(book) {
 function changeStatus(id) {
 	for (let item in myLibrary) {
 		if (item.id == id) {
-			item.Isread = !item.Isread;
+			item.IsRead = !item.IsRead;
 		}
 	}
 }
